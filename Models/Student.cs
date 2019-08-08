@@ -12,6 +12,7 @@ namespace CRUD_Operations_Using_EF.Models
         private string Name;
         private string Email;
         private string City;
+        public List<Student> StudentDetails { get; set; }
 
     [Required(ErrorMessage="Id is required !!")]
         public int ID

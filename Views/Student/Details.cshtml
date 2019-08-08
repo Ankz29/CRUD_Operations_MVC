@@ -1,0 +1,41 @@
+﻿@model CRUD_Operations_Using_EF.Models.Student
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Details of student</h2></center>
+
+<table>
+    <tr>
+        <td>
+            <b> ID:</b>
+        </td>
+        <td> @Model.ID</td>       
+    </tr>
+    <tr>
+        <td>
+            <b> NAME:</b>
+        </td>
+        <td> @Model.NAME</td>
+     </tr>
+    <tr>
+        <td>
+            <b> EMAIL ID:</b>
+        </td>
+        <td> @Model.EMAIL</td>
+    </tr>
+    <tr>
+        <td>
+            <b> CITY:</b>
+        </td>
+        <td> @Model.CITY</td>
+    </tr>
+
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to registration", "Index")  &nbsp; @Html.ActionLink("Update your data", "UpdateData")  &nbsp; @Html.ActionLink("delete data", "Delete")
+</div>
+
+

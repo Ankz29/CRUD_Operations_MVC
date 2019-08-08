@@ -6,40 +6,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Insertion of data to database</h2>
+<center><h2>Insertion of data to database</h2></center>
 
-<div>
+<div style=" padding: 60px; text-align: center; text-align:center;  background-color: #00ffdc;">
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary(true)
         <div>
-            @Html.LabelFor(model => model.ID)
-            @Html.TextBoxFor(model => model.ID)
-            @Html.ValidationMessageFor(model => model.ID)
+            <span>
+                @Html.LabelFor(model => model.ID): &nbsp;
+                @Html.TextBoxFor(model => model.ID)
+                @Html.ValidationMessageFor(model => model.ID)
+            </span>
+        @*</div>
+        <div>*@
+            <span>
+                @Html.LabelFor(model => model.NAME): &nbsp;
+                @Html.TextBoxFor(model => model.NAME)
+                @Html.ValidationMessageFor(model => model.NAME)
+            </span>
+        @*</div>
+        <div>*@
+            <span>
+                @Html.LabelFor(model => model.EMAIL): &nbsp;
+                @Html.TextBoxFor(model => model.EMAIL)
+                <span>
+                    @Html.ValidationMessageFor(model => model.EMAIL)
+                </span>
+            </span>
+        @*</div>
+        <div>*@
+            <span>
+                @Html.LabelFor(model => model.CITY): &nbsp;
+                @Html.TextBoxFor(model => model.CITY)
+                @Html.ValidationMessageFor(model => model.CITY)
+            </span>
         </div>
-        <div>
-            @Html.LabelFor(model => model.NAME)
-            @Html.TextBoxFor(model => model.NAME)
-            @Html.ValidationMessageFor(model => model.NAME)
-        </div>
-        <div>
-            @Html.LabelFor(model => model.EMAIL)
-            @Html.TextBoxFor(model => model.EMAIL)
-            @Html.ValidationMessageFor(model => model.EMAIL)
-        </div>
-        <div>
-            @Html.LabelFor(model => model.CITY)
-            @Html.TextBoxFor(model => model.CITY)
-            @Html.ValidationMessageFor(model => model.CITY)
-        </div>
-
-
+        <br>
+    <div>
         <input type="submit" value="submit" />
+    </div>
     }
     @ViewBag.SuccessMessage
-
+    <br />
     <div>
-        @Html.ActionLink("Back to registration", "Index") @Html.ActionLink("Update your data","Index") @Html.ActionLink("delete data", "Delete")
+        @Html.ActionLink("Back to registration", "Index")  &nbsp; @Html.ActionLink("Update your data","UpdateData")  &nbsp; @Html.ActionLink("delete data", "Delete") &nbsp; @Html.ActionLink("show details of student", "Details")
     </div>
 
 </div>

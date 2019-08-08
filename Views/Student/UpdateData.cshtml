@@ -1,0 +1,40 @@
+﻿@model CRUD_Operations_Using_EF.Models.Student
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<center><h2>Update your data here</h2></center>
+<div style=" padding: 60px; text-align: center; text-align:center; margin-bottom:25px; background-color: #00ffdc;">
+    @using (Html.BeginForm())
+    { @Html.ValidationSummary(true)
+        <span>
+            @Html.LabelFor(model => model.ID)
+            @Html.TextBoxFor(model => model.ID)
+            @Html.ValidationMessageFor(model => model.ID)
+        </span>
+        <span>
+            @Html.LabelFor(model => model.NAME)
+            @Html.TextBoxFor(model => model.NAME)
+            @Html.ValidationMessageFor(model => model.NAME)
+        </span>
+        <span>
+            @Html.LabelFor(model => model.EMAIL)
+            @Html.TextBoxFor(model => model.EMAIL)
+            @Html.ValidationMessageFor(model => model.EMAIL)
+        </span>
+        <span>
+            @Html.LabelFor(model => model.CITY)
+            @Html.TextBoxFor(model => model.CITY)
+            @Html.ValidationMessageFor(model => model.CITY)
+        </span>
+
+
+        <input type="submit" value="submit" />
+    }
+
+    @ViewBag.UpdateMessage
+
+    <div> @Html.ActionLink("Back to registration", "Index")</div>
+
+</div>
