@@ -1,0 +1,45 @@
+﻿@model CRUD_Operations_Using_EF.Models.Student
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Insertion of data to database</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div>
+            @Html.LabelFor(model => model.ID)
+            @Html.TextBoxFor(model => model.ID)
+            @Html.ValidationMessageFor(model => model.ID)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.NAME)
+            @Html.TextBoxFor(model => model.NAME)
+            @Html.ValidationMessageFor(model => model.NAME)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.EMAIL)
+            @Html.TextBoxFor(model => model.EMAIL)
+            @Html.ValidationMessageFor(model => model.EMAIL)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.CITY)
+            @Html.TextBoxFor(model => model.CITY)
+            @Html.ValidationMessageFor(model => model.CITY)
+        </div>
+
+
+        <input type="submit" value="submit" />
+    }
+    @ViewBag.SuccessMessage
+
+    <div>
+        @Html.ActionLink("Back to registration", "Index") @Html.ActionLink("Update your data","Index") @Html.ActionLink("delete data", "Delete")
+    </div>
+
+</div>
