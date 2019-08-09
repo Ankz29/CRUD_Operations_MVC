@@ -12,6 +12,7 @@ namespace CRUD_Operations_Using_EF.Models
         private string Name;
         private string Email;
         private string City;
+        private string  PhoneNumber;
         public List<Student> StudentDetails { get; set; }
 
     [Required(ErrorMessage="Id is required !!")]
@@ -40,7 +41,8 @@ namespace CRUD_Operations_Using_EF.Models
             }
         }
         
-        [Required(ErrorMessage="Email id is required !!")]
+        [CustomEmailValidator]
+       // [Required(ErrorMessage="Email id is required !!")]
         public string EMAIL
         {
             get
@@ -65,6 +67,18 @@ namespace CRUD_Operations_Using_EF.Models
                 City = value;
             }
         }
-           
+
+        [CustomPhoneNumberValidator]
+        public string PHONENUMBER
+        {
+            get
+            {
+                return PhoneNumber;
+            }
+            set
+            {
+                PhoneNumber = value;
+            }
+        }
     }
 }

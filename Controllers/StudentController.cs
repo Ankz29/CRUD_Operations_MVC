@@ -12,9 +12,6 @@ namespace CRUD_Operations_Using_EF.Controllers
 {
     public class StudentController : Controller
     {
-        //
-        // GET: /Student/
-
         public ActionResult Index()
         {
             return View();
@@ -25,28 +22,24 @@ namespace CRUD_Operations_Using_EF.Controllers
         {
             if (ModelState.IsValid)
             {
-                    try
-                    {
-                        SqlUtilityClass.Insertion(modelData);
+                try
+                {
+                    SqlUtilityClass.Insertion(modelData);
                     ViewBag.SuccessMessage = "Data saved scuccessfully !!";
-                    }
-                    catch (Exception)
-                    {
-                        new Exception("Data could not be saved, please try again !!");
-                    }
-                    ModelState.Clear();  
-            
-        }
+                }
+                catch (Exception)
+                {
+                    new Exception("Data could not be saved, please try again !!");
+                }
+               
+            }
             else
             {
-                Console.WriteLine("Invalid entry of data, please try again !!");
+                return View();
+               
             }
-
-            Response.Redirect("~/Student/UpdateData");
-            
+            ModelState.Clear();
             return View();
-
-           
         }
 
         public ActionResult UpdateData(Student modelData)
@@ -63,7 +56,6 @@ namespace CRUD_Operations_Using_EF.Controllers
                     new Exception("Data could not be saved, please try again !!");
                 }
                 ModelState.Clear();
-
             }
             else
             {
@@ -72,7 +64,7 @@ namespace CRUD_Operations_Using_EF.Controllers
             return View();
         }
 
-        //[HttpDelete]
+        [HttpDelete]
         public ActionResult Delete(Student modelData)
         {
             if (ModelState.IsValid)
@@ -87,7 +79,6 @@ namespace CRUD_Operations_Using_EF.Controllers
                     new Exception("Data could not be deleted, please try again !!");
                 }
                 ModelState.Clear();
-
             }
             else
             {
@@ -110,7 +101,6 @@ namespace CRUD_Operations_Using_EF.Controllers
                     new Exception("Data could not be deleted, please try again !!");
                 }
                 ModelState.Clear();
-
             }
             else
             {
@@ -118,6 +108,5 @@ namespace CRUD_Operations_Using_EF.Controllers
             }
             return View(modelData);
         }
-
     }
 }
